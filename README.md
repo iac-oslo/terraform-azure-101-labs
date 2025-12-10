@@ -1,6 +1,6 @@
 # repository-name-placeholder
 
-Labs for `WORKSHOP_NAME_PLACEHOLDER` workshop
+Labs for `Terraform on Azure Fundamentals` workshop
 
 ## Checklist (can be removed from this README before publishing)
 

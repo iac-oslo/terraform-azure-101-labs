@@ -1,5 +1,5 @@
-site_name: WORKSHOP_NAME_PLACEHOLDER - Workshop
-site_description: WORKSHOP_NAME_PLACEHOLDER - Workshop
+site_name: Terraform on Azure Fundamentals - Workshop
+site_description: Terraform on Azure Fundamentals - Workshop
 site_author: Infrastructure as Code Oslo
 
 nav:
@@ -76,7 +76,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/iac-oslo/repo-name-placeholder
+      link: https://github.com/iac-oslo/terraform-azure-101-labs
   consent:
     title: Cookie consent
     description: >-
@@ -88,4 +88,4 @@ extra:
 extra_css:
   - assets/stylesheets/extra.css
 
-repo_url: https://github.com/iac-oslo/repo-name-placeholder
+repo_url: https://github.com/iac-oslo/terraform-azure-101-labs
