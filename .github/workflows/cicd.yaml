@@ -1,0 +1,32 @@
+name: Azure Storage Account Static Web CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install mkdocs-material
+      - run: mkdocs build -d site
+      - name: 'Copy files to Azure Storage'
+        uses: bacongobbler/azure-blob-storage-upload@main
+        with:
+          connection_string: ${{ secrets.STORAGE_ACCOUNT_SECRET }}
+          container_name: $web/repository-name-placeholder
+          source_dir: 'site'
+          overwrite: true
